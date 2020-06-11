@@ -8,6 +8,10 @@ public class Tuple {
 	    this.x = x; 
 	    this.y = y; 
 	  } 
+	  public void ChangeData(int x, int y){
+		    this.x = x; 
+		    this.y = y; 
+	  }
 	  public int getX(){
 		  return x;
 	  }
@@ -21,4 +25,4 @@ public class Tuple {
 		  return yf;
 	  }  
 		  
-}
+} 
