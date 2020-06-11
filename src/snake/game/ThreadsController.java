@@ -48,5 +48,33 @@ public class ThreadsController extends Thread {
 				e.printStackTrace();
 		 }
 	 }
+         
+         //Checking if the snake bites itself or is eating
+	 private void checkCollision() {
+		 Tuple posCritique = positions.get(positions.size()-1);
+		 for(int i = 0;i<=positions.size()-2;i++){
+			 boolean biteItself = posCritique.getX()==positions.get(i).getX() && posCritique.getY()==positions.get(i).getY();
+			 if(biteItself){
+				stopTheGame();
+			 }
+		 }
+		 
+		 boolean eatingFood = posCritique.getX()==foodPosition.y && posCritique.getY()==foodPosition.x;
+		 if(eatingFood){
+			 System.out.println("Yummy!");
+			 sizeSnake=sizeSnake+1;
+			 	foodPosition = getValAleaNotInSnake();
+
+			 spawnFood(foodPosition);	
+		 }
+	 }
+	 
+	 //Stops The Game
+	 private void stopTheGame(){
+		 System.out.println("COLISION! \n");
+		 while(true){
+			 pauser();
+		 }
+	 }
 	 
 }
