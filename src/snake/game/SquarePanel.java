@@ -9,4 +9,10 @@ public class SquarePanel extends JPanel{
 		this.setBackground(d);
 	}
 	
+	public void ChangeColor(Color d){
+		this.setBackground(d);
+		this.repaint();
+	}
+	
+}
 
