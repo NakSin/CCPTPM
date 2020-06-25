@@ -1,3 +1,5 @@
+package snake.game;
+
 import java.util.ArrayList;
 import java.awt.Color;
 
